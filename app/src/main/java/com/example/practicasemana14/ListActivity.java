@@ -22,11 +22,14 @@ import java.util.UUID;
 
 public class ListActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText descripcionTarea, nombreTarea;
-    private Button agregarBtn;
-    private FirebaseDatabase db;
+    private EditText descripcionT, nombreT;
     private ListView listaTareas;
     private String userId, nombre;
+    private Button anadirBtn;
+
+
+    private FirebaseDatabase db;
+
     private ArrayList<Task> dataTareas;
     private ArrayAdapter<Task> adapter;
 
@@ -35,10 +38,11 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        agregarBtn = findViewById(R.id.agregarBtn);
-        descripcionTarea = findViewById(R.id.descripcionTarea);
-        nombreTarea = findViewById(R.id.nombreTarea);
+        nombreT = findViewById(R.id.nombreT);
         listaTareas = findViewById(R.id.listaTareas);
+        anadirBtn = findViewById(R.id.anadirBtn);
+        descripcionT = findViewById(R.id.descripcionT);
+
 
         dataTareas = new ArrayList<>();
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,dataTareas);
@@ -48,7 +52,7 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
         userId = getSharedPreferences("idUsuario", MODE_PRIVATE).getString("id", "no_ID");
         nombre = getSharedPreferences("idUsuario", MODE_PRIVATE).getString("nombre", "no_Nombre");
 
-        agregarBtn.setOnClickListener(this);
+        anadirBtn.setOnClickListener(this);
         db = FirebaseDatabase.getInstance();
 
         loadDatabase();
@@ -96,11 +100,11 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.agregarBtn:
+            case R.id.anadirBtn:
 
                 String id = UUID.randomUUID().toString();
                 DatabaseReference reference = db.getReference().child("tasks").child(userId).child(id);
-                Task task = new Task(id, nombreTarea.getText().toString(), descripcionTarea.getText().toString());
+                Task task = new Task(id, nombreT.getText().toString(), descripcionT.getText().toString());
                 reference.setValue(task);
 
                 break;

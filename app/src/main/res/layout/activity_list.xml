@@ -7,18 +7,18 @@
     tools:context=".ListActivity">
 
     <Button
-        android:id="@+id/agregarBtn"
+        android:id="@+id/anadirBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Agregar"
+        android:text="Añadir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descripcionTarea" />
+        app:layout_constraintTop_toBottomOf="@+id/descripcionT" />
 
     <EditText
-        android:id="@+id/descripcionTarea"
+        android:id="@+id/descripcionT"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -27,15 +27,15 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombreTarea" />
+        app:layout_constraintTop_toBottomOf="@+id/nombreT" />
 
     <EditText
-        android:id="@+id/nombreTarea"
+        android:id="@+id/nombreT"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Nombre de tarea"
+        android:hint="Nombre de la tarea"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,5 +48,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/agregarBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/anadirBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

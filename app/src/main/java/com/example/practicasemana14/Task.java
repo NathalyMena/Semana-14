@@ -8,12 +8,14 @@ import java.util.Date;
 
 public class Task {
 
-    private String id;
-    private String title;
-    private String description;
-    private String completado;
     private long date;
     private boolean completed;
+    private String title;
+    private String id;
+    private String description;
+    private String completado;
+
+
 
     public Task(){
 
